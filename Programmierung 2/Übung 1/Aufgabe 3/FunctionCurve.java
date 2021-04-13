@@ -85,7 +85,7 @@ public class FunctionCurve extends Application
 
         //HBox = Horizontal aligned box
         //HBox topsideControls = new HBox(5);
-        FlowPane topsideControls = new FlowPane();
+        FlowPane topsideControls = new FlowPane(5, 5);
 
         //Used to proper align the spinners with the labels
         topsideControls.setAlignment(Pos.CENTER);
@@ -150,7 +150,7 @@ public class FunctionCurve extends Application
 
 
         //Creating the scene
-        Scene scene = new Scene(content, 670, 530);
+        Scene scene = new Scene(content, 670, 540);
 
         //Show the stage
         stage.setTitle(this.getClass().getSimpleName());
