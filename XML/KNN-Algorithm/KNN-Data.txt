@@ -1,0 +1,10 @@
+{"id":"d0", "class":"0", "text":"ABABABABBABACCDDAA"}
+{"id":"d1", "class":"0", "text":"ABAABACCDDAAAADCAA"}
+{"id":"d2", "class":"1", "text":"DFFFAFFEFFABCFFABA"}
+{"id":"d3", "class":"0", "text":"ABABCADCDDAAAADCAA"}
+{"id":"d4", "class":"1", "text":"FAFFEFDFDDFACFFAAA"}
+{"id":"d5", "class":"2", "text":"EDBAEEDDAAAADEEEAA"}
+{"id":"d6", "class":"2", "text":"EAAABBBBAAADEEAAAD"}
+{"id":"d7", "class":"2", "text":"BBBCBBEBBBBABBBCCB"}
+{"id":"d8", "class":"1", "text":"ABABBFFFFFFFFFFFFA"}
+{"id":"d9", "class":"0", "text":"CDDAAAADCAAEFAFECE"}
