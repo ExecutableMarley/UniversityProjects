@@ -1,4 +1,4 @@
-Aufgabe A1
+Aufgabe A1\
 Verfügbar von: Sunday, 27. April 2021, 16:15
 Abgabetermin: Tuesday, 27. April 2021, 17:30
 Erforderliche Dateien: A1.java (Herunterladen)
@@ -34,7 +34,7 @@ public class A1 extends Application {
 }
 ```
 
-Aufgabe A2
+Aufgabe A2\
 Verfügbar von: Sunday, 4. April 2021, 17:59
 Abgabetermin: Tuesday, 27. April 2021, 17:30
 Erforderliche Dateien: A2.java (Herunterladen)
