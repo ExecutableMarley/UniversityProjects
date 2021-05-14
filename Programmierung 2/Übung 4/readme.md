@@ -22,3 +22,22 @@ Liste von beliebigen Strings ubergeben bekommt, um von diesen Strings alle n-Gra
 zu berechnen. Vereinigen Sie innerhalb dieser Methode alle n-Gramme in einer Map, die für
 jedes einzelne n-Gramm die absolute Anzahl ihrer Vorkommen speichert und geben Sie die
 Map auf der Konsole aus.
+
+
+Aufgabe 3 (\*\*\*)\
+Betrachten Sie den in Moodle verfugbaren Programmcode FP S21 ueb04.zip. (Not inside this repo)
+* Implementieren Sie eine Methode print(IteratorStrategy strategy) in der Klasse DataStructure. Rufen Sie diese Methode mit einer Instanz der Klasse EvenIteratorStrategy auf, sodass die selbe Funktionalität wie die der Methode printEven
+ausgefuhrt wird.
+* Rufen Sie die Methode print(IteratorStrategy strategy) so auf, dass die ungeraden Index-Werte ausgegeben werden. Nutzen Sie eine anonyme Klasse als Parameter der Methode, die als Instanz des Interfaces IteratorStrategy dient.
+* Implementieren Sie eine Methode print(java.util.Function<Integer, Boolean>
+iterator) in der Klasse DataStructure mit der selben Funktionalit¨at wie die der
+Methode print(IteratorStrategy strategy). Rufen Sie die neu implementierte
+Methode zweimal mithilfe eines Lambda Ausdrucks auf, sodass alle geraden IndexWerte beim ersten Aufruf und alle ungeraden Index-Werte beim zweiten Aufruf ausgegeben werden.
+* Definieren Sie zwei Methoden, sodass die folgenden Statements die geraden bzw.
+ungeraden Index Werte ausgeben:
+```java
+DataStructure ds = new DataStructure();
+// ...
+ds.print(DataStructure::isEvenIndex);
+ds.print(DataStructure::isOddIndex);
+```
