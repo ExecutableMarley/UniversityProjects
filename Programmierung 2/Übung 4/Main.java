@@ -58,7 +58,8 @@ public class Main
 
         List<String> stringList = Arrays.asList("Hallo   Trier ", "  Hallo    World  ");
 
-        NGramme.someFunction(stringList);
+        NGramme.someFunction(stringList, 5).
+                forEach((s, i) -> System.out.printf("N-Gram: [%s] | Count: [%d]\n", s,i));
 
 
         //Aufgabe 3
