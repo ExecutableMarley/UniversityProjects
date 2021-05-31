@@ -20,12 +20,10 @@ public class A2
 
     static void druckeZeichen(Map<Integer,Character> zeichenliste, Test pred)
     {
-        //Get map elements as stream
         zeichenliste.entrySet().stream().
-                //Filter with the test interface
                 filter(pred::test).
-                //Output the remaining elements
-                forEach(mapElem -> System.out.print(mapElem.getValue()));
+                map(Map.Entry::getValue).
+                forEach(System.out::println);
 
         System.out.println();
     }
