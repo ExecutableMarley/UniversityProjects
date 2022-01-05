@@ -2,10 +2,6 @@ package puzzle;
 
 public class Main
 {
-    public static String nachname = "Arns";    // Tragen Sie hier Ihren Nachnamen ein
-    public static String vorname = "Marley";   // Tragen Sie hier Ihren Vornamen ein
-    public static String matrikel = "1528348"; // Tragen Sie hier Ihre Matrikelnummer ein
-
     /* Vergessen Sie nicht, die nachfolgenden Behauptungen zu pruefen!
      * Wahr:   qX = true;
      * Falsch: qX = false;
