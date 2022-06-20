@@ -35,6 +35,6 @@
       /                                               /      
       +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
 
-Resources about the topic:
-https://beta.computer-networking.info/syllabus/default/protocols/dns.html#:~:text=The%20Transaction%20ID%20(transaction%20identifier,identifier%20chosen%20by%20the%20client.
+Resources about the topic:                 
+https://beta.computer-networking.info/syllabus/default/protocols/dns.html#:~:text=The%20Transaction%20ID%20
 https://www.ibm.com/docs/en/qradar-on-cloud?topic=data-parsing-dns-query-response-fields
