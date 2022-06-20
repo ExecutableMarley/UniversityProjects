@@ -120,7 +120,9 @@ class DnsRecord:
         self.NSCOUNT = getIntFromBytes(bytes[8  : 10])
         self.ARCOUNT = getIntFromBytes(bytes[10 : 12])
         
-        bytes[4 : 12]
+        #Sometimes server returns a packet with only the header
+        if not self.QDCOUNT and not self.ANCOUNT and not self.NSCOUNT and not self.ARCOUNT:
+            return
         
         byteCursor = 12
         
@@ -168,12 +170,21 @@ class DnsRecord:
                     idx += 2
                 address = ':'.join(address_list)
             #print("Testing: " + address)
-            #Check if address is a dns server
-            if not checkIfDnsServer(address):
+            
+            #Check if server supports iterative
+            if self.RA:
+                #Check if server is a dns server
+                if checkIfDnsServer(address):
+                    result = recursiveDnsLookup(self.QNAME, self.QTYPE, address)
+                    if result is not None:
+                        return result
+                else:
+                    return address
+            else:
                 return address
-            result = recursiveDnsLookup(self.QNAME, self.QTYPE, address)
-            if result is not None:
-                return result
+            
+            
+            #if not self.RA or not checkIfDnsServer(address):
             byteCursor += RDLENGTH * 2
         #print(socket.inet_ntop(socket.AF_INET6, bytes[-16:]))
         #return socket.inet_ntoa(bytes[-4:])
@@ -234,7 +245,7 @@ def iterativeDnsLookup(host, requestType = "A", dnsServer = "1.1.1.1", port=53):
 
 # Domain Name | Request Type | DNS Server | Port
 
-print(recursiveDnsLookup("google.com", "A", "38.132.106.139", 53))
+print(recursiveDnsLookup("google.com", "A", "9.9.9.9", 53))
 
 print(iterativeDnsLookup("google.com", "A", "38.132.106.139", 53))
 
@@ -242,3 +253,10 @@ print(recursiveDnsLookup("google.com", "AAAA", "38.132.106.139", 53))
 
 print(iterativeDnsLookup("google.com", "AAAA", "38.132.106.139", 53))
 
+#Common Dns Servers:
+#(Please note that some dns server wont support iterative lookups while some will simply return a recursive request)
+# Google Public DNS	8.8.8.8
+# Cloudflare	    1.1.1.1
+# OpenDNS	        208.67.222.222
+# CyberGhost	    38.132.106.139
+# Quad9	            9.9.9.9
