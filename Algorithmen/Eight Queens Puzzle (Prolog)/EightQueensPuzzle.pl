@@ -40,7 +40,7 @@ sicher([Q | Qs]) :-
 
 %%Generate Solutions, N specifies the size of the board. Qs holds the generated results
 damen(N, Qs) :-
-    initliste(1, N, List),
+    init_list(1, N, List),
     permutation(List, Qs),
     sicher(Qs),
     write(Qs).
