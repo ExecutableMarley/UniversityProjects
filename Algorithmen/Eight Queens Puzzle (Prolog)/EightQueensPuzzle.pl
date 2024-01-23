@@ -1,41 +1,42 @@
-%% I Dont Always use Recursion, but when i do i use Recursion
+/**I Dont Always use Recursion, but when i do i use Recursion
+ * Github: github.com/ExecutableMarley 
+ */ 
 
-%%Creates a list in the form of: (int)[N,N+1,...,M-1,M]
-initliste(M,N,[M|Ns]) :- M < N, M1 is M+1, initliste(M1,N,Ns).
-initliste(N,N,[N]).
+% Creates a list in descending order: [M, M-1, ..., N+1, N]
+init_list(M, N, [M | Ns]) :- M < N, M1 is M + 1, init_list(M1, N, Ns).
+init_list(N, N, [N]).
 
-%%Generates Permuations (Z|Zs) of a give list (Xs)
-permutation(Xs,[Z|Zs]) :- select(Z,Xs,Ys), permutation(Ys,Zs).
-permutation([],[]).
+% Generates permutations (Z|Zs) of a given list (Xs)
+permutation(Xs, [Z | Zs]) :- select(Z, Xs, Ys), permutation(Ys, Zs).
+permutation([], []).
 
-%%Terminate Empty List
-not_angreifen(_,[],_).
+% Terminate when the list is empty
+not_angreifen(_, [], _).
 
-%%Process List
+% Process the list
 not_angreifen(X, [Head|T], Counter) :-
-    %%abs(Head - X) =\= Counter,
 	Head - X =\= Counter,
 	X - Head =\= Counter,
 	Counter2 is Counter + 1,
 	not_angreifen(X, T, Counter2).
 
-%%no_angreifen entry point
+% Entry point for not_angreifen
 not_angreifen(X, Xs) :- 
     not_angreifen(X, Xs, 1).
 
-%% Evaluates to the opposite of no_angreifen
+% Evaluate to the opposite of no_angreifen
 angreifen(X, Xs) :-
     not(not_angreifen(X,Xs)).
 
 angreifen(X, Xs, C) :-
     not(not_angreifen(X,Xs, C)).
 
-%%Terminate Empty List
+% Terminate when the list is empty
 sicher([]).
-%%Process List
-sicher([Q|Qs]) :-
+% Process the list
+sicher([Q | Qs]) :-
 	sicher(Qs),
-	not_angreifen(Q,Qs, 1).
+	not_angreifen(Q, Qs, 1).
 
 %%Generate Solutions, N specifies the size of the board. Qs holds the generated results
 damen(N, Qs) :-
